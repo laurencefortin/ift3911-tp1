@@ -1,0 +1,100 @@
+Aeroport   ID (3 lettres uniques)
+
+Compagnie Une compagnie aérienne est identifiée par moins de six caractères uniques à chaque compagnie. ????
+-Plein tarif
+
+
+Vol	- Compagnie aerienne
+	- aeroport destination
+	- aeroport origine
+	- date
+	- heure
+	- Id (2 lettres + chiffres)  lettres = compagnie, chiffre = unique
+
+
+
+Avion : max 100 rangees, max 10 colonnes
+
+Creation Section
+Un avion contient 0 ou plus de sections, mais une fois la même section. ???
+
+Siege :
+-Section
+-ID (numero rangee + colonne lettre)
+-Disposition
+-Type du Prix (associe au id de compagnie)
+
+
+
+Systeme:
+- Affichage aeroport ou compagnie aerienne
+
+
+
+
+
+Voyage Naval
+
+Port
+-Id (3 lettres uniques)
+-Ville ?
+
+Compagnie de croisiere
+-Id
+-Plein tarif
+
+Itineraire
+-date et heure depart/arrivee
+-Pas plus de 21 jours
+-Visites de port
+-Bateau peut avoir plusieurs itineraires
+-Doit revenir au premier port
+
+Paquebot
+-Section
+-Cabines
+
+Consultation
+-Affichage part compagnie ou port (details itineraires)
+
+
+Voyages ferroviaires
+Gare
+-ID (3 lettres uniques) 
+-Ville
+
+Ligne de train
+-?????
+
+Itineraires
+-Dates heure depart/arrivee
+-Visites suites de gares
+
+Train
+-Section
+-Meme que Avion
+
+
+Volet Client
+Vol aerien et ferro
+
+Affichage : 
+tous les vols/depart 
+d'une gare/aeroport a destination avec des sieges libres, pour date et classe donnee
+
+Details vol / depart : date et heure depart, heure arrivee, duree, compagnie ID , numero vol, prix, nbr siege disponible pour section
+
+
+Reservation : client peut reserver siege, option alee ou fenetre , avec numero reservation, siege reserve pendant 24h
+Paiement : avec numero reservation 
+Info client : noms courriel passeportID  carte credit  
+Confirmation paiement, siege reserve devient assigne/confirme
+
+
+Voyage Naval
+Peut  rechercher tous itineraire d'un port origine avec cabine dispo et date/classe donnee
+Affichage : date, duree, compagnie, numero iti, nbr cabines, prix
+Reservation : numero reservation pour cabine, paiement avec numero reservation
+
+
+
