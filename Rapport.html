@@ -23,15 +23,15 @@
 </head>
 <body>
     <h1 style="text-align: center;">
-        IFT 2255 - Devoir 1</h1>
+        IFT 3911 - DM1</h1>
     <h2>
         Information générale</h2>
     <p>
-        <span style="font-weight: bold;">Nom: </span>Dina Benkirane
+        <span style="font-weight: bold;">Nom: </span>Francis Boudreau
         <br />
         <span style="font-weight: bold;">Matricule: </span>1234
         <br />
-        <span style="font-weight: bold;">Courriel: </span>syriani@iro.umontreal.ca
+        <span style="font-weight: bold;">Courriel: </span>frnacis.boudreau.2@umontreal.ca
         <br />
         <span style="font-weight: bold;">temps mis: </span>40 heures
     </p>
@@ -56,7 +56,7 @@
     <h2>
         Distribution des tâches</h2>
     <p>
-        <span style="font-weight: bold;">Soumetteur: </span>Eugene Syriani
+        <span style="font-weight: bold;">Soumetteur: </span>Laurence Fortin
     </p>
     <table cellpadding="7px">
         <thead>
@@ -65,7 +65,7 @@
                     Tâche
                 </th>
                 <th>
-                    Dina
+                    Francis
                 </th>
                 <th>
                     Laurence
@@ -78,7 +78,7 @@
         <tbody>
             <tr>
                 <td class="first_col">
-                    Comception du domaine
+                    Conception du domaine
                 </td>
                 <td>
                     
@@ -121,11 +121,36 @@
 			
         </tbody>
     </table>
-    <h2>
-        Hypothèses</h2>
-    <p>
-        J'ai supposé que...
-    </p>
+    <h2>Hypothèses</h2>
+      <p>
+      <ul>
+         <li><strong>Idées Générales</strong> : Nous avons modifié quelque peu certaines étapes de l'utilisation du logiciel pour rendre l'expérience plus simple à l'Agent en réduisant la possibilité qu'il puisse faire un erreur. Par exemple, au lieu de devoir confirmer le Code de Service auquel l'Utilisateur veut s'inscrire, le logiciel lui affiche directement ceux qui sont disponibles. La même chose se produit lors d'une confirmation de participation, seulement les Services auxquels l'Utilisateur est inscrit sont affichés, etc.</li>
+         <br>
+         <li>
+            <strong>Inscription</strong> : Les informations nécessaires à une inscription sont : 
+            <ul>
+               <li>Numéro d'Utilisateur (généré automatiquement)</li>
+               <li>Nom</li>
+               <li>Prénom</li>
+               <li>Date de naissance</li>
+               <li>Adresse</li>
+               <li>Courriel</li>
+               <li>Numéro de Téléphone</li>
+               <li>Profesionnel ou non</li>
+            </ul>
+         </li>
+         <br>
+         <li><strong>Utilisateurs</strong> : Nous avons supposé qu'autant le Membre que le Professionnel pouvaientt être des Utilisateurs du #GYM, seulement le Professionnel accès à plus d'opérations dans le logiciel. Comme la création/consultation/modification des Services qu'il offre.</li>
+         <br>
+         <li><strong>Numéro d'Utilisateur</strong> : Puisque ce n'était pas spécifié, nous avons supposé qu'un Membre et qu'un Professionnel utilisait le même type de numéro identifiant unique. Autant les Membres que les Professionnels doivent valider leur numéro d'Utilisateur avant d'accéder au #GYM ou toutes opérations du logiciel via l'Agent.</li>
+         <br>
+         <li><strong>Code de Service</strong> : Numéro unique à 7 chiffres différent de ceux des Utilisateurs.</li>
+         <br>
+         <li><strong>Services</strong> : Les Membres du #GYM peuvent seulement s'inscrire un Service la journée même.</li>
+         <br>
+         <li><strong>Description des Services</strong> : Il est difficile pour un Humain d'identifier un Service seulement à l'aide d'un Code de 7 chiffres. C'est pourquoi nous avons pris la décision d'introduire une description au Service pour l'identifier plus facilement, celui-ci étant obligatoire contrairement au commentaire.</li>
+      </ul>
+      </p>
     <h2>
         Tâche 1</h2>
     <p>
@@ -140,7 +165,9 @@
     <h2>
         Tâche 2</h2>
     <p>
-        ...
-    </p>
+	  <p>
+         <img src="./exigences/diagramme_use_case.png" width="600px" alt="diagramme_use_case" /><br><br>
+         Voici un <a href="./exigences/diagramme_use_case.vpp">lien</a> vers le fichier du diagramme.
+      </p></p>
 </body>
 </html>
