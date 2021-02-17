@@ -18,9 +18,15 @@ Context Port
 inv: Port.allInstances()->forAll(c1,c2|c1<>c2 implies c1.id <> c2.id)
 
 Context Siege
- 
 inv: Siege.allInstances()->forAll(c1,c2|c1.Section = c2.section implies c1.section.taux = c2.section.taux)
+inv: Siege.Payé  and Siege.Reservé  implies siege.Confirmé
 
+Context Siege::reserver(a : client)
+pre: self.reservé -> excludes(a)
+post : reserver(a) implies self.contains(Reservation)
+Context siege::confirmer(a : client)
+pre: not (self.contains(Reservation ) and self.Reservation.Contains(a)) -> excludes(a)
+post : self.contains(Confirmation) and self.Confirmation.Contains(a)
 Context Gare 
 inv: Gare.allInstances()->forAll(d1,d2|d1<>d2 implies d1.id <> d2.id)
 
@@ -29,4 +35,5 @@ inv: (self.DateArrivee - self.DateDepart) <
 inv: self.ArraylistPort.Last() = self.EndroitDepart
 
 Context Paquebot
-inv: Paquebot.
+inv: Paquebot.allInstances()->forAll(e1,e2|e1<>e2 implies checkNoConflict(e1.ListCroisiere,e2.ListCroisiere)=True).
+
