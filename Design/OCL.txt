@@ -1,0 +1,32 @@
+Context Compagnie
+inv: Compagnie.allInstances()->forAll(a1,a2|a1<>a2 implies a1.id <> a2.id)
+inv: self.id.Length() < 
+
+Context Voyage 
+inv: self.DateDepart < self.DateArrivee
+inv: self.HeureDepart < self.HeureArrivee
+
+Context Vol
+inv: Vol.allInstances()->forAll(b1,b2|b1<>b2 implies b1.id <> b2.id)
+inv: self.EndroitDepart <> self.EndroitArrivee
+
+Context Avion
+inv: self.rangee <= 100
+inv: self.colonne <= 10
+
+Context Port 
+inv: Port.allInstances()->forAll(c1,c2|c1<>c2 implies c1.id <> c2.id)
+
+Context Siege
+ 
+inv: Siege.allInstances()->forAll(c1,c2|c1.Section = c2.section implies c1.section.taux = c2.section.taux)
+
+Context Gare 
+inv: Gare.allInstances()->forAll(d1,d2|d1<>d2 implies d1.id <> d2.id)
+
+Context Croisiere
+inv: (self.DateArrivee - self.DateDepart) < 
+inv: self.ArraylistPort.Last() = self.EndroitDepart
+
+Context Paquebot
+inv: Paquebot.
