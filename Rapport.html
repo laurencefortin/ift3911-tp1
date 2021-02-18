@@ -183,7 +183,7 @@
             <strong>Général</strong>  
             <ul>
                <li>Pour les consultations, les clients peuvent seulement chercher par aéroport/port/gare</li>
-               <li>Pour les consultations des administeurs, il est possible de chercher par aéroport/port/gare mais également par compagnie.</li>
+               <li>Pour les consultations des administrateurs, il est possible de chercher par aéroport/port/gare mais également par compagnie.</li>
                <li>Quand on arrive au menu, on choisi le type de voyage qu'on cherche pour ensuite choisir l'aéroport/port/gare pour finalement selectioner les autres critères</li>
                <li>En se qui concerne le menu, il retourne une liste du choix prédéfini.</li>
                <li>Même si les voyages férroviaires et aérien sont hautement similaire en terme de verification, on sépare quand même le menu en 2 sections comme le voyageur connait ses préférences. </li>
@@ -296,6 +296,18 @@ inv: Paquebot.allInstances()->forAll(e1,e2|e1<>e2 implies checkNoConflict(e1.Lis
 
 </p>
       <h2>Justification</h2>
-      <p></p>
+      <p>
+	  1. Nous avons séparé Vol/Itinéraire/Croisiere puisqu'ils sont très similaire mais conserve des différences notables du au mode de transport différent.
+	  <br>
+	  2. Puisque les recherches se font par compagnie et aeroport/gare/port, nous avons décidé de stocker les voyage séparément dans chaque objet dans une liste de voyage.
+	  <br>
+	  3. Pour s'assurer que la confirmation est faite sur le bon siège, on conserve la réservation courante dans l'objet Siege, et le l'objet client dans la réservation.
+	  <br>
+	  4. Notre Classe Système est associée(donc couplée) avec toute nos autres classes, mais par souci de clarté, nous n'avons pas mis aucun lien avec les autres classes.
+	  <br>
+	  5. Pour empêcher la double réservation d'un siège, nous avons choisi de conserver un objet réservation dans le siège et de vérifier avant la réservation qu'il n'en contient pas déja un.
+	  <br>
+	  6. Pour rechercher, notre système offre deux menus principaux, un pour les administrateurs et un autre pour les clients. Bien qu'ils semblent similaires, ils offrent des types de recherches différents.
+	  </p>
    </body>
 </html>
