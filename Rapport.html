@@ -253,9 +253,10 @@
       <img src="./Design/paquets.jpg"  alt="diagramme_paquets" /><br><br>
       Voici un <a href="./Domaine/paquets.vpp">lien</a> vers le fichier vpp du diagramme.
       <h2>Contraintes OCL</h2>
+	  
       <p> <strong>Context Compagnie</strong><br>
-inv: Compagnie.allInstances()->forAll(a1,a2|a1<>a2 implies a1.id <> a2.id)<br>
-inv: self.id.Length() < 6 <br><br>
+	inv: Compagnie.allInstances()->forAll(a1,a2|a1<>a2 implies a1.id <> a2.id)<br>
+	inv: self.id.Length() < 6 <br><br>
 
 <strong>Context Voyage</strong><br>
 inv: self.DateDepart < self.DateArrivee<br>
@@ -273,25 +274,25 @@ inv: self.colonne <= 10<br><br>
 inv: Port.allInstances()->forAll(c1,c2|c1<>c2 implies c1.id <> c2.id)<br><br>
 
 <strong>Context Siege</strong><br>
-inv: Siege.allInstances()->forAll(c1,c2|c1.Section = c2.section implies c1.section.taux = c2.section.taux)<br>
-inv: Siege.Payé  and Siege.Reservé  implies siege.Confirmé<br>
 
+inv: Siege.allInstances()->forAll(c1,c2|c1.section = c2.section implies c1.taux = c2.taux)<br>
+inv: Siege.paid  and Siege.contains(Reservation) implies siege.contains(Confirmation)<br>
 Context Siege::reserver(a : client)<br>
-pre: self.reservé -> excludes(a)<br>
+pre: self.contains(Reservation) -> excludes(a)<br>
 post : reserver(a) implies self.contains(Reservation)<br>
 Context siege::confirmer(a : client)<br>
-pre: not (self.contains(Reservation ) and self.Reservation.Contains(a)) -> excludes(a)<br>
+pre: not(self.contains(Reservation ) and self.Reservation.Contains(a)) -> excludes(a)<br>
 post : self.contains(Confirmation) and self.Confirmation.Contains(a)<br><br>
 
 <strong>Context Gare </strong><br>
 inv: Gare.allInstances()->forAll(d1,d2|d1<>d2 implies d1.id <> d2.id)<br><br>
 
 <strong>Context Croisiere</strong><br>
-inv: (self.DateArrivee - self.DateDepart) < 21 <br>
+inv: (self.DateArrivee - self.DateDepart) < 21<br>
 inv: self.ArraylistPort.Last() = self.EndroitDepart<br><br>
 
 <strong>Context Paquebot</strong><br>
-inv: Paquebot.allInstances()->forAll(e1,e2|e1<>e2 implies checkNoConflict(e1.ListCroisiere,e2.ListCroisiere)=True).<br>
+inv: Paquebot.allInstances()->forAll(e1,e2|e1<>e2 implies checkNoConflict(e1.ListCroisiere,e2.ListCroisiere))<br>
 
 </p>
       <h2>Justification</h2>
